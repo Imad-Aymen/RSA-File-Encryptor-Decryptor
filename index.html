@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RSA File Encryptor/Decryptor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main-box">
+    <button class="help-btn" id="helpBtn">Help</button>
+    <div class="main-title">
+      <span>RSA</span> <b>File <span style="color:#f74a7b;">Encryptor</span>/<span style="color:#7a8cf7;">Decryptor</span></b>
+    </div>
+    <div class="keys-section">
+      <button class="keys-btn" onclick="generateKeys()">Generate RSA Key Pair</button>
+    </div>
+    <textarea id="pubKey" class="keys-area" placeholder="RSA Public Key (PEM)" spellcheck="false"></textarea>
+    <textarea id="privKey" class="keys-area" placeholder="RSA Private Key (PEM)" spellcheck="false"></textarea>
+    <input type="file" id="fileInput" class="file-input-box">
+    <button class="action-btn" onclick="encryptFile()">ENCRYPT FILE</button>
+    <button class="action-btn" onclick="decryptFile()">DECRYPT FILE</button>
+    <div class="output-msg" id="output"></div>
+  </div>
+  <!-- Help Modal -->
+  <div class="modal" id="helpModal">
+    <div class="modal-content">
+      <button class="close-modal" onclick="closeHelp()">&times;</button>
+      <div class="modal-header">How to Use This Platform</div>
+      <ol>
+        <li>
+          <b>Generate or Paste Keys:</b><br>
+          Click "Generate RSA Key Pair" or paste your own <b>PEM</b> RSA keys.<br>
+          <span style="color:#f74a7b;"><b>Keep your private key safe!</b></span>
+        </li>
+        <li>
+          <b>Select a File:</b><br>
+          Use the file input to pick any file (image, video, PDF, ...).
+        </li>
+        <li>
+          <b>Encrypt:</b><br>
+          Press "ENCRYPT FILE".<br>
+        </li>
+        <li>
+          <b>Decrypt:</b><br>
+          Press "DECRYPT FILE" after selecting an encrypted file and adding your private key.
+        </li>
+        <li>
+          <b>Note:</b>
+          <ul>
+            <li>All processing stays in your browser.</li>
+            <li>You can use your own PEM RSA keys from other tools.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <script src="script_Page_And_Rsa.js"></script>
+</body>
+</html>
